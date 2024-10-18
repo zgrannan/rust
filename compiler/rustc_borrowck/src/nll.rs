@@ -184,7 +184,7 @@ pub(crate) fn compute_regions<'a, 'tcx>(
             let algorithm = Algorithm::from_str(&algorithm).unwrap();
             debug!("compute_regions: using polonius algorithm {:?}", algorithm);
             let _prof_timer = infcx.tcx.prof.generic_activity("polonius_analysis");
-            Some(Rc::new(Output::compute(all_facts, algorithm, false)))
+            Some(Rc::new(Output::compute(all_facts, algorithm, true)))
         } else {
             None
         }
